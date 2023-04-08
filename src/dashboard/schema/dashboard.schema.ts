@@ -6,7 +6,6 @@ export type dashboardDocument = dashboards & Document;
 @Schema({collection: 'dashboards'})
 export class dashboards {
 
-
     @Prop()
     Title:string;
 
