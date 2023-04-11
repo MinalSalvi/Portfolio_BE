@@ -2,7 +2,7 @@ import { Prop,Schema,SchemaFactory } from "@nestjs/mongoose";
 import { Document } from 'mongoose';
 
 
-export type dashboardDocument = dashboards & Document;
+export type dashboardDocument = Document<dashboards>;
 @Schema({collection: 'dashboards'})
 export class dashboards {
 
@@ -13,10 +13,10 @@ export class dashboards {
    Organisation:string;
 
     @Prop()
-     Year:number;
+     Year:string;
 
     @Prop()
     Status:string;
 
 }
-export const dashboardschema = SchemaFactory.createForClass(dashboards)
+export const dashboardschema = SchemaFactory.createForClass(dashboards);

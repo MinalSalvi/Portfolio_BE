@@ -8,13 +8,18 @@ import {InjectModel} from '@nestjs/mongoose'
 export class DashboardService {
     constructor(
         @InjectModel(dashboards.name)
-         private DashboardModel:Model<dashboardDocument>,
+         private DashboardModel:Model<dashboards>,
          ){}
 
 
 async getAll():Promise<dashboards[]>{
     return this.DashboardModel.find().exec();
 }
+
+async create(dashboards:dashboards){
+const newChanges = new this.DashboardModel(dashboards);
+    return newChanges.save();
+} 
 }
 
 
