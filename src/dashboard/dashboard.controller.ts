@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post} from '@nestjs/common';
+import { Body, Controller, Get, Post, Delete, Param} from '@nestjs/common';
 import { DashboardService } from './dashboard.service';
 import { dashboards } from './schema/dashboard.schema';
 
@@ -14,5 +14,10 @@ export class DashboardController {
     @Post()
     async CreateChanges(@Body() dashboards:dashboards){
         return this.dashboardservice.create(dashboards);
+    }
+
+    @Delete('/:id')
+    async deleteExample(@Param('id') id:string):Promise<void>{
+        await this.dashboardservice.deleteExample(id);
     }
 }

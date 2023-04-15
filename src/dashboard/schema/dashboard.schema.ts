@@ -7,16 +7,19 @@ export type dashboardDocument = Document<dashboards>;
 export class dashboards {
 
     @Prop()
-    Title:string;
+    Title:string='';
 
    @Prop()
-   Organisation:string;
+   Organisation:string='';
 
     @Prop()
-     Year:string;
+     Year:string='';
 
     @Prop()
-    Status:string;
+    Status:string='';
+
+    @Prop()
+    URL:string='';
 
 }
 export const dashboardschema = SchemaFactory.createForClass(dashboards);

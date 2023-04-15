@@ -17,7 +17,12 @@ async getAll():Promise<dashboards[]>{
 async create(dashboards:dashboards){
 const newChanges = new this.DashboardModel(dashboards);
     return newChanges.save();
+    
 } 
+
+async deleteExample(id:string): Promise<void>{
+  await this.DashboardModel.deleteOne({_id: id}).exec();
+}
 }
 
 
