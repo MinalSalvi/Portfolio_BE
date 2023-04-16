@@ -16,8 +16,8 @@ export class DashboardController {
         return this.dashboardservice.create(dashboards);
     }
 
-    @Delete('/:id')
-    async deleteExample(@Param('id') id:string):Promise<void>{
-        await this.dashboardservice.deleteExample(id);
+    @Delete("/:id")
+    async DeleteChanges(@Param('id') id:string){
+        await this.dashboardservice.delete(id);
     }
 }

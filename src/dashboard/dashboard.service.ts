@@ -20,8 +20,11 @@ const newChanges = new this.DashboardModel(dashboards);
     
 } 
 
-async deleteExample(id:string): Promise<void>{
-  await this.DashboardModel.deleteOne({_id: id}).exec();
+
+
+
+async delete(id: string){
+    await this.DashboardModel.findByIdAndRemove(id);
 }
 }
 
